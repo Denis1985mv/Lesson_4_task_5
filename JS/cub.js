@@ -15,21 +15,25 @@ function add() {
   }
 
   let Cub = prompt("Введите дланну ребра куба: ");
-
   let CubNumber = Number(Cub);
-  let CubSa = CubNumber;
-  let CubSq = CubNumber;
 
-  CubNumber = sumCub(CubNumber);
-  CubSa = sumCubSa(CubSa);
-  CubSq = sumCubSq(CubSq);
+  if (isNaN(CubNumber)) {
+    alert("Вы ввели не число");
+  } else {
+    let CubSa = CubNumber;
+    let CubSq = CubNumber;
 
-  let resultCub = `Вы ввели значение ребра куба ${Cub}, исходя из этого:
-                   его объем равен: ${CubNumber}, 
-                   а площадь поверхности ${CubSa},
-                   а диагональ равна ${CubSq}`;
+    CubNumber = sumCub(CubNumber);
+    CubSa = sumCubSa(CubSa);
+    CubSq = sumCubSq(CubSq);
 
-  document.write(resultCub);
+    let resultCub = `Вы ввели значение ребра куба ${Cub}, исходя из этого:
+    его объем равен: ${CubNumber}, 
+    а площадь поверхности ${CubSa},
+    а диагональ равна ${CubSq}`;
+
+    document.write(resultCub);
+  }
 }
 
 function par() {
@@ -55,12 +59,11 @@ function par() {
   const So = Number(velueA);
   const h = Number(velueB);
 
-  //let SoResult = velueV(So, h,);
   let resultV = velueS(So, h);
-  // let resultP = velueSp(So);
 
-  document.write(`Вы ввели площадь параллейпипеда ${So} и высоту ${h}, и по формиле V=So*h нашли полный объем - 
-                 ${resultV}`);
+  document.write(`Вы ввели площадь параллейпипеда ${So} 
+  и высоту ${h}, и по формиле V=So*h 
+  нашли полный объем - ${resultV}`);
 }
 
 function parSb() {
@@ -82,8 +85,6 @@ function parSb() {
 
 function parOb() {
   function parObres(a, b, c) {
-    // S = 2(a·b + a·h + b·h) = 2(10·20 + 10·15 + 20·15) = 1300
-    // let S = 2 * a * b * 2 * a * c * 2 * b * c;
     let S = 2 * (a * b + a * c + b * c);
     return S;
   }
