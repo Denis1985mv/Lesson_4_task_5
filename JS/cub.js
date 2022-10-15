@@ -173,12 +173,12 @@ function Pyromide() {
   } else {
     let result = pyromideV(So, H);
     document.write(`Вы ввели площадь основания пиромиды 
-    ${So} и высоту ${H}, на основании этих данных площадь 
+    ${So} и высоту ${H}, на основании этих данных объем 
     пирамиды состовляет ${result} ед. куб.`);
     }
 }
 
-function PyromideV() {
+function PyromideS() {
 
   function pyromideV() {
     let result = So + Sb;
