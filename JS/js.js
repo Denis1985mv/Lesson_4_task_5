@@ -23,7 +23,7 @@ switch (check) {
   case "7":
     check = Pyromide(check);
   case "8":
-    check = PyromideV(check);
+    check = PyromideS(check);
     break;
 
   default:
