@@ -1,6 +1,6 @@
 function add() {
   function sumCub(CubNumber) {
-    let result = CubNumber * CubNumber * CubNumber; // обьем каба
+    let result = CubNumber * CubNumber * CubNumber; // объем каба
     return result;
   }
 
@@ -37,18 +37,7 @@ function add() {
 }
 
 function par() {
-  function velueOs() {
-    let So = a * b;
-    return So;
-  }
-
   function velueS() {
-    let V = So * h;
-    return V;
-  }
-
-  function velueSp() {
-    // Sб=2c(a+b), где a, b - стороны основания, c - боковое ребро.
     let V = So * h;
     return V;
   }
@@ -58,12 +47,15 @@ function par() {
 
   const So = Number(velueA);
   const h = Number(velueB);
+  if (isNaN(So) && isNaN(h)) {
+    alert("Вы ввели не число!");
+  } else {
+    let resultV = velueS(So, h);
 
-  let resultV = velueS(So, h);
-
-  document.write(`Вы ввели площадь параллейпипеда ${So} 
+    document.write(`Вы ввели площадь параллейпипеда ${So} 
   и высоту ${h}, и по формиле V=So*h 
   нашли полный объем - ${resultV}`);
+  }
 }
 
 function parSb() {
@@ -72,15 +64,18 @@ function parSb() {
     return S;
   }
 
-  let velueSo = prompt("Введите площадь основания целинда:");
-  let velueSb = prompt("Введите площадь боковой поверхности целиндра: ");
+  let velueSo = prompt("Введите площадь основания параллелепипеда:");
+  let velueSb = prompt("Введите площадь боковой поверхности паралелептпеда: ");
 
   let So = Number(velueSo);
   let Sb = Number(velueSb);
+  if (isNaN(So) && isNaN(Sb)) {
+    alert("Вы ввели не число!");
+  } else {
+    let result = velueSoSb(So, Sb);
 
-  let result = velueSoSb(So, Sb);
-
-  document.write(`Площадь целиндра: ${result}`);
+    document.write(`Площадь целиндра: ${result}`);
+  }
 }
 
 function parOb() {
@@ -106,12 +101,105 @@ function parOb() {
   const a = Number(veluA);
   const b = Number(veluB);
   const c = Number(veluC);
+  if (isNaN(a) || isNaN(b) || isNaN(c)) {
+    alert("Вы ввели не число!");
+  } else {
+    let result = parObres(a, b, c);
+    let resultPl = parPl(a, b, c);
+    let resultD = parDg(a, b, c);
 
-  let result = parObres(a, b, c);
-  let resultPl = parPl(a, b, c);
-  let resultD = parDg(a, b, c);
-
-  document.write(
-    `Результат: объем - ${resultPl}, площадь  - ${result}, диаганаль ${resultD}`
-  );
+    document.write(
+      `Результат: объем - ${resultPl}, площадь  - ${result}, диаганаль ${resultD}`
+    );
+  }
 }
+
+function Prism() {
+  function velueS() {
+    let V = So * h;
+    return V;
+  }
+
+  let velueA = prompt("Введите площадь основания призмы: ");
+  let velueB = prompt("Введите высоту призмы:");
+
+  const So = Number(velueA);
+  const h = Number(velueB);
+  if (isNaN(So) && isNaN(h)) {
+    alert("Вы ввели не число!");
+  } else {
+    let resultV = velueS(So, h);
+
+    document.write(`Вы ввели площадь призмы ${So} 
+    и высоту ${h}, и по формиле V=So*h 
+    нашли полный объем призмы - ${resultV}`);
+  }
+}
+
+function PrismS() {
+  function velueSoSb(So, Sb) {
+    let S = 2 * So + Sb;
+    return S;
+  }
+
+  let velueSo = prompt("Введите площадь основания призмы:");
+  let velueSb = prompt("Введите площадь боковой поверхности призмы: ");
+
+  let So = Number(velueSo);
+  let Sb = Number(velueSb);
+
+  if (isNaN(So) && isNaN(Sb)) {
+    alert("Вы ввели не число!");
+  } else {
+    let result = velueSoSb(So, Sb);
+    document.write(`Площадь целиндра: ${result}`);
+  }
+}
+
+function Pyromide() {
+  function pyromideV() {
+    let result = (1 * (So * H))/3;
+    return result;
+  }
+
+  let velueSo = prompt("Введите площадь основаания пиромиды: ");
+  let velueH = prompt("Введите высоту пиромиды: ");
+
+  const So = Number(velueSo);
+  const H = Number(velueH);
+
+  if (isNaN(So) || isNaN(H)) {
+    alert("Вы ввели не число");
+  } else {
+    let result = pyromideV(So, H);
+    document.write(`Вы ввели площадь основания пиромиды 
+    ${So} и высоту ${H}, на основании этих данных площадь 
+    пирамиды состовляет ${result} ед. куб.`);
+    }
+}
+
+function PyromideV() {
+
+  function pyromideV() {
+    let result = So + Sb;
+    return result;
+  }
+
+  let velueSo = prompt("Введите площадь основаания пиромиды: ");
+  let velueSb = prompt("Введите площадь боковой поверхности пирамиды: ");
+
+  const So = Number(velueSo);
+  const Sb = Number(velueSb);
+
+  if (isNaN(So) || isNaN(Sb)) {
+    alert("Вы ввели не число");
+  } else {
+    let result = pyromideV(So, Sb);
+    document.write(`Вы ввели площадь основания пиромиды 
+    ${So} и площадь боковой поверхности пиромиды ${Sb}, 
+    на основании этих данных площадь 
+    пирамиды состовляет ${result} ед. куб.`);
+    }
+}
+
+
