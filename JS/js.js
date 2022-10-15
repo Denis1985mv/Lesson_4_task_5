@@ -14,6 +14,7 @@ switch (check) {
     break;
   case "4":
     check = parOb(check);
+    break;
   case "5":
     check = Prism(check);
     break;
@@ -22,6 +23,7 @@ switch (check) {
     break;
   case "7":
     check = Pyromide(check);
+    break;
   case "8":
     check = PyromideS(check);
     break;
