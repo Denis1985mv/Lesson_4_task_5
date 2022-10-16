@@ -65,7 +65,7 @@ function parSb() {
   }
 
   let velueSo = prompt("Введите площадь основания параллелепипеда:");
-  let velueSb = prompt("Введите площадь боковой поверхности паралелептпеда: ");
+  let velueSb = prompt("Введите площадь боковой поверхности паралелепипеда: ");
 
   let So = Number(velueSo);
   let Sb = Number(velueSb);
@@ -74,7 +74,7 @@ function parSb() {
   } else {
     let result = velueSoSb(So, Sb);
 
-    document.write(`Площадь целиндра: ${result}`);
+    document.write(`Площадь параллелепипеда: ${result}`);
   }
 }
 
