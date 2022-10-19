@@ -1,25 +1,4 @@
 
-let check = prompt(
-  "Выберите действие: \n 1 - Куб (объем, площадь проверхности, даоганаль) "
-);
-
-switch (check) {
-  case "1":
-    check = add(check);
-    break;
-  case "2":
-    check = par(check);
-    break;
-  case "3":
-    check = parSb(check);
-    break;
-  case "4":
-    check = parOb(check);
-    break;
-  default:
-    document.write(" - Вы ввели не то действие.");
-}
-
 
 
 
