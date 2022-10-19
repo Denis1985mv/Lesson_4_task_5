@@ -1,104 +1,103 @@
+let value = prompt("Введите баланс на закупку телефонов: ");
+let valueMounth = prompt("Введите на сколько месяцев сделать расcчет: ");
 
-let check = prompt(
-  "Выберите действие: \n 1 - Куб (объем, площадь проверхности, даоганаль) "
-);
+const valueTelephone = 50;
+const valueaAccess = 10;
+const taxnds = 0.2;
+let valueBalanc = Number(value);
+let mounth = Number(valueMounth);
+let count = 0;
+let countBalance = 0;
+let result = 0;
+let x = 0;
+let resultAcss = 0;
+let countAcss = 0;
+let xAcss = 0;
+let countBalanceAcss = 0;
+let valBalanceaAcsstaxs = 0;
+let totalBalance = 0;
+let mounthIter = 0;
+let mounthIterVel = 1;
 
-switch (check) {
-  case "1":
-    check = add(check);
-    break;
-  case "2":
-    check = par(check);
-    break;
-  case "3":
-    check = parSb(check);
-    break;
-  case "4":
-    check = parOb(check);
-    break;
-  default:
-    document.write(" - Вы ввели не то действие.");
+
+while(mounth > mounthIter){
+if(valueBalanc >= 0){
+let valueCo = prompt(`Месяц ${mounthIterVel} Сколько телефонов Вы хотите купить(стоимость одного телефона -${valueTelephone} рб), на балансе еще осталось ${valueBalanc} рб (с учетом вычета налогов):`);
+let valueCount = Number(valueCo);
+
+  x=0;
+  result = 0;
+  count = 0;
+  countBalance = 0;
+while (x < valueCount) {
+  
+  result = valueTelephone;
+  count += result;
+  countBalance = Number(count);
+  ++x;
+
+  console.log(result);
 }
 
+valueBalanc = valueBalanc - countBalance;
+let valBalancetaxs = countBalance * taxnds;
+let totalBalanceTel = valueBalanc - valBalancetaxs;
+
+document.write(`Месяц ${mounthIterVel}. Сумма закупки ${countBalance} рб, 
+остаток Вашего баланса составляет ${valueBalanc} рб, 
+количество телефонов которые Вы купили ${x} шт, налог НДС составил ${valBalancetaxs} рб, 
+остаток на балансе после вычета налогов ${totalBalanceTel} рб`);
+
+valueBalanc = valueBalanc - valBalancetaxs;
+
+let valueAcss = prompt(
+  "Если Вы хотите докупить аксессуары нажмите 1 \n если нет то нажмите 2(или любую цифру кроме 1)"
+);
+
+xAcss = 0;
+if (valueAcss <= 1 && valueAcss > 0 ) {
+  let valueCoAcss = prompt(`Сколько аксессуаров Вы хотите купить (стоимость 1шт = ${valueaAccess} рб):`);
+  
+  resultAcss = 0;
+  countAcss = 0;
+  countBalanceAcss = 0;
+  while (xAcss < valueCoAcss) {
+   
+    resultAcss = valueaAccess;
+    countAcss += resultAcss;
+    countBalanceAcss = Number(countAcss);
+    ++xAcss;
+    
+  }
+} else {
+
+}
+
+valueBalanc = valueBalanc - countBalanceAcss;
+valBalanceaAcsstaxs = countBalanceAcss * taxnds;
+totalBalance = valueBalanc - valBalanceaAcsstaxs;
+console.log("здесь", valBalanceaAcsstaxs);
 
 
+document.write("<br>");
+document.write(`Сумма закупки аксессуаров ${countBalanceAcss}, 
+остаток Вашего баланса составляет ${valueBalanc} рб, 
+Вы купили  количество аксессуаров ${xAcss} шт, налог НДС составил ${valBalanceaAcsstaxs} рб, 
+итоговый баланс после вычета налогов ${totalBalance} рб`);
+document.write("<br>");
 
+valueBalanc = valueBalanc - valBalanceaAcsstaxs;
 
+console.log(valueBalanc);
 
+++mounthIter;
+++mounthIterVel;
+document.write("<br>");
+countBalanceAcss = 0;
+countBalance = 0;
+}else{
+  alert(`Не хватает средств, баланс ${valueBalanc} рб. Вы не рассчитали баланс!`);
+  break;
+}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-// function sum(x, y) {
-//   let sumResult = x + y;
-//   return sumResult;
-// }
-
-// }
-
-
-
-
-
-
-
-
-
-// let result = sum(10, 20); // функция возвращает значение, которое будет записано в переменную result
-// console.log(result);
-
-// var numbst = prompt("В какую степень: ");
-
-// let Sum = Cub * Cub * Cub;
-
-// alert(Sum);
-
-// // var result = numb * numb * numb; //Куб перемножаем 3 раза
-// // document.write(result + ' - вычисляем куб числа: ' + numb);
-// Sa = Math.pow(numb,numbst), // площадь грани
-
-// alert(Sa);
-
-// console.log("Вычисление объема цилиндра.");
-// //  V=π * r в квадрате * h
-// let V;
-// const Pi = 3.1415926535; // правильно использовать константу для подобных значений
-// let r = 10; // радиус
-// let h = 20; // высота
-
-// V = Pi * r * r * h;
-// console.log(V);
-
-// 	function summa(num1, num2) {
-// 		var itog = num1 + num2;
-// 		document.write(itog + ' Сумма этих чисел равна' + '<br />');
-// 	}
-
-// 	summa(35,34);
-// 	summa(35,550);
-
-// 	function square(numb){ //Функция для вычисления квадрата числа
-// 		var itog = numb * numb;
-// 		document.write(itog + ' - вычисляем квадрат <br />');
-// 	}
-
-// 	square(5);
-// 	square(252);
-
-// /************************************************************************/
-// 	function cube(){ //Функция для вычисления куба числа
-// 		var numb = prompt("Укажите число для вычисления куба: ");
-// 		var result = numb * numb * numb; //Куб перемножаем 3 раза
-// 		document.write(result + ' - вычисляем куб числа: ' + numb);
-// 	}
-
-// 	cube();
