@@ -1,3 +1,21 @@
+let obj2 = {
+   resaltTask6: function FiniteValueF(obj) {
+    getProp(obj);
+    function getProp(o) {
+      for (var prop in o) {
+        if (typeof o[prop] === "object") {
+          getProp(o[prop]);
+        } else {
+          console.log("Свойство: " + [prop]);
+          document.write(
+            "Свойство: " + [prop] + " Имеет значение:" + o[prop] + "<br>"
+          );
+        }
+      }
+    }
+  }
+}
+
 let obj1 = {
   imgEnot: {
     EnotTwo: {
@@ -6,7 +24,6 @@ let obj1 = {
         "<img src='https://placepic.ru/wp-content/uploads/2018/11/s1200-45.jpg' style='width:400px'>",
     },
   },
-
   firstName: "Витя",
   lastName: "Киселёв",
   age: 45,
@@ -18,20 +35,5 @@ let obj1 = {
   },
 };
 
-getFiniteValue(obj1);
-function getFiniteValue(obj) {
-  getProp(obj);
+obj2.resaltTask6(obj1);
 
-  function getProp(o) {
-    for (var prop in o) {
-      if (typeof o[prop] === "object") {
-        getProp(o[prop]);
-      } else {
-        console.log("Свойство: " + [prop]);
-        document.write(
-          "Свойство: " + [prop] + " Имеет значение:" + o[prop] + "<br>"
-        );
-      }
-    }
-  }
-}
